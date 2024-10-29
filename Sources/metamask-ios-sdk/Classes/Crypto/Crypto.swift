@@ -1,4 +1,20 @@
+#if targetEnvironment(simulator)
+typealias CCP = UnsafeMutablePointer<CChar>?
+func ecies_generate_secret_key() -> [UInt8] {
+    []
+}
+func ecies_public_key_from(_ string: CCP) -> [UInt8]? {
+    []
+}
+func ecies_encrypt(_ value: CCP, _ message: CCP) -> [UInt8]? {
+    []
+}
+func ecies_decrypt(_ value: CCP, _ message: CCP) -> [UInt8]? {
+    []
+}
+#else
 import Ecies
+#endif
 import Foundation
 
 public protocol Crypto {
